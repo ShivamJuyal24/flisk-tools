@@ -427,3 +427,23 @@ describe("guards", () => {
 		expect(cache.get("c")).toBeUndefined();
 	});
 });
+
+describe("security headers", () => {
+	it("sends strict-transport-security on the home page", async () => {
+		const res = await app.request("/");
+		expect(res.status).toBe(200);
+		expect(res.headers.get("strict-transport-security")).toBe(
+			"max-age=15552000; includeSubDomains",
+		);
+	});
+
+	it("sends strict-transport-security on the crawler redirect too", async () => {
+		const res = await app.request("/?q=docker", {
+			headers: { "user-agent": "Mozilla/5.0 (compatible; Amazonbot/0.1)" },
+		});
+		expect(res.status).toBe(301);
+		expect(res.headers.get("strict-transport-security")).toBe(
+			"max-age=15552000; includeSubDomains",
+		);
+	});
+});
