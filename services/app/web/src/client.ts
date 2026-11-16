@@ -47,7 +47,8 @@ if (slot) {
     const a = document.createElement("a");
     a.className = "gh-btn";
     a.href = API + "/auth/github?return=" + encodeURIComponent(location.origin + location.pathname + location.search);
-    a.textContent = "Sign in with GitHub";
+    a.setAttribute("aria-label", "Sign in with GitHub");
+    a.innerHTML = '<span class="gh-full">Sign in with GitHub</span><span class="gh-short" aria-hidden="true">Sign in</span>';
     a.title = "We only read your public GitHub login.";
     slot.append(a);
   }

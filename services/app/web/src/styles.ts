@@ -10,14 +10,17 @@ body{margin:0;background:radial-gradient(60rem 30rem at 85% -10%,var(--bg-glow),
 a{color:var(--accent-text);text-underline-offset:3px}code,pre{font-family:var(--font-mono)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--accent);color:var(--accent-ink);padding:.4rem .8rem;border-radius:8px;z-index:50}
-.site-header{border-bottom:1px solid var(--line)}.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3rem}
+.site-header{border-bottom:1px solid var(--line)}.header-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3rem}
 .brand{display:inline-flex;align-items:center;gap:.5rem;color:var(--text);font-weight:700;text-decoration:none;white-space:nowrap}.brand img{width:20px;height:20px}
 .hook{flex:1;font-family:var(--font-mono);font-size:.72rem;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
 .nav{display:flex;align-items:center;gap:1rem;font-size:.875rem}.nav a{color:var(--muted);text-decoration:none;font-weight:500}.nav a:hover{color:var(--text)}
 #gh-slot{display:inline-flex;gap:.5rem;align-items:center}
 .gh-btn,.theme-toggle{font:inherit;font-size:.8125rem;font-weight:600;color:var(--text)!important;background:transparent;border:1px solid var(--line-strong);border-radius:999px;padding:.2rem .8rem;cursor:pointer;text-decoration:none!important}
+.gh-btn{white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;min-height:44px}.gh-short{display:none}
+.brand,.nav>a{min-height:44px;display:inline-flex;align-items:center}.theme-toggle{min-height:44px}
+@media(max-width:480px){.gh-full{display:none}.gh-short{display:inline}.header-bar{gap:.5rem;flex-wrap:wrap}.nav{gap:.5rem;flex-wrap:wrap}}
 .gh-btn:hover,.theme-toggle:hover{background:var(--surface-2)}#gh-slot a.gh-btn:first-child:not([href^="https://github.com"]){background:var(--accent);color:var(--accent-ink)!important;border-color:transparent}
-@media(max-width:900px){.hook{display:none}}@media(max-width:560px){.nav-extra{display:none}}
+@media(max-width:900px){.hook{display:none}}@media(max-width:560px){.nav .nav-extra{display:none}}
 .views{display:flex;gap:.4rem;padding:.7rem 0 0;flex-wrap:wrap}
 .view-tab,.subtab{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);text-decoration:none;font-weight:600;font-size:.875rem;padding:.35rem .9rem;border-radius:999px;border:1px solid transparent}
 .view-tab:hover,.subtab:hover{color:var(--text);background:var(--surface-2)}
